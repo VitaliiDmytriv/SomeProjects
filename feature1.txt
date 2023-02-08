@@ -1,2 +1,4 @@
 this is a big new feature
-conflict 123
+
+conflict 1
+
