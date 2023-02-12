@@ -1,0 +1,141 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-size: 30px;
+}
+
+div {
+  margin-bottom: 30px;
+}
+
+.some:nth-child(odd) {
+  color: red;
+}
+
+.a {
+  margin-bottom: 10px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  background-color: aqua;
+  padding: 4px;
+  border: 2px solid black;
+}
+
+ul {
+  border: 1px solid red;
+  padding: 10px;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+li {
+  border: 5px solid blue;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.standart {
+  width: 200px;
+  border: 5px solid black;
+  height: 50px;
+  margin-left: 20px;
+  padding: 5px;
+  box-sizing: content-box;
+}
+
+.border {
+  width: 200px;
+  border: 5px solid black;
+  height: 50px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  padding: 5px;
+}/*# sourceMappingURL=style.css.map */

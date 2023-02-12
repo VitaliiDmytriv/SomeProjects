@@ -1,0 +1,58 @@
+@import "../null.scss";
+
+body {
+    font-size: 30px;
+}
+
+div {
+    margin-bottom: 30px;
+}
+
+.some:nth-child(odd) {
+    color: red;
+}
+
+.a {
+    margin-bottom: 10px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-color: aqua;
+    padding: 4px;
+    border: 2px solid black;
+}
+
+ul {
+    border: 1px solid red;
+    padding: 10px;
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+
+li {
+    border: 5px solid blue;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+a {
+    // display: block;
+}
+
+.standart {
+    width: 200px;
+    border: 5px solid black;
+    height: 50px;
+    margin-left: 20px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.border {
+    width: 200px;
+    border: 5px solid black;
+    height: 50px;
+
+    margin-left: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+}
