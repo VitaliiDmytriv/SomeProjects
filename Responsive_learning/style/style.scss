@@ -11,8 +11,10 @@ body {
 .nft {
     padding: 10px;
 
-    // &__container {
-    // }
+    &__container {
+        max-width: 74.375rem;
+        margin: auto;
+    }
 
     &__subtitle {
         color: $primaryColor;
@@ -35,15 +37,30 @@ body {
         }
     }
 
-    // &__row {
-    // }
+    &__row {
+        display: grid;
+        column-gap: 1.5rem;
+        row-gap: 1.5rem;
+        @media (min-width: 42rem) {
+            //671px
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 63.125rem) {
+            //1010px
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 }
 .nft-card {
     padding: calc(15px + 0.390625vw);
     border: 0.5px solid #e3e3e3;
     border-radius: 3px;
     box-shadow: 0px 0px 20px rgba(221, 221, 221);
+    min-width: 19.68rem;
 
+    @media (max-width: 21.87rem) {
+        min-width: auto;
+    }
     @media (min-width: 37.5rem) {
         padding: 20px;
     }
@@ -91,9 +108,15 @@ body {
     }
 
     &__author-body {
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
         flex: 1;
+
+        & > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     &__name {

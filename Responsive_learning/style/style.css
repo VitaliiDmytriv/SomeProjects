@@ -94,6 +94,10 @@ body {
 .nft {
   padding: 10px;
 }
+.nft__container {
+  max-width: 74.375rem;
+  margin: auto;
+}
 .nft__subtitle {
   color: #ff014f;
   font-size: calc(0.71rem + 0.390625vw);
@@ -114,12 +118,34 @@ body {
     font-size: calc(2.21rem + 0.390625vw);
   }
 }
+.nft__row {
+  display: grid;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+@media (min-width: 42rem) {
+  .nft__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 63.125rem) {
+  .nft__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .nft-card {
   padding: calc(15px + 0.390625vw);
   border: 0.5px solid #e3e3e3;
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgb(221, 221, 221);
+  min-width: 19.68rem;
+}
+@media (max-width: 21.87rem) {
+  .nft-card {
+    min-width: auto;
+  }
 }
 @media (min-width: 37.5rem) {
   .nft-card {
@@ -159,9 +185,12 @@ body {
   max-width: 100%;
 }
 .nft-card__author-body {
+  flex: 1;
+}
+.nft-card__author-body > div {
   display: flex;
   justify-content: space-between;
-  flex: 1;
+  align-items: center;
 }
 .nft-card__name {
   font-size: calc(0.8rem + 0.290625vw);

@@ -12,3 +12,9 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {...}
+
+min-width 1 card = 314px
+column-gap = 24px
+padding = 20
+
+3/col = 20 + (314*3) + (24*2)= 
