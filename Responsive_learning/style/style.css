@@ -100,22 +100,24 @@ body {
 }
 .nft__subtitle {
   color: #ff014f;
-  font-size: calc(0.71rem + 0.390625vw);
   text-align: center;
-  line-height: 1.3;
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.3125;
   margin-bottom: 1.25em;
 }
 .nft__title {
   color: #1e2d48;
-  font-weight: 700;
-  font-size: calc(1.802rem + 0.390625vw);
+  font-size: calc(1.80625rem + 0.390625vw);
   line-height: 1.5;
-  text-align: center;
   margin-bottom: 1.25em;
+  font-weight: 700;
+  text-align: center;
 }
 @media (min-width: 37.5rem) {
   .nft__title {
-    font-size: calc(2.21rem + 0.390625vw);
+    font-size: calc(2.21875rem + 0.390625vw);
+    line-height: 1.5;
+    margin-bottom: 1.25em;
   }
 }
 .nft__row {
@@ -141,6 +143,8 @@ body {
   border-radius: 3px;
   box-shadow: 0px 0px 20px rgb(221, 221, 221);
   min-width: 19.68rem;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 21.87rem) {
   .nft-card {
@@ -152,8 +156,15 @@ body {
     padding: 20px;
   }
 }
+.nft-card__img {
+  flex: 1;
+}
 .nft-card__img img {
-  max-width: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .nft-card__available-div {
   margin-top: 13px;
@@ -170,6 +181,7 @@ body {
   color: #ff014f;
   font-size: calc(0.7rem + 0.290625vw);
   line-height: 1.6;
+  margin-left: 5px;
 }
 .nft-card__author-div {
   display: flex;
@@ -193,27 +205,27 @@ body {
   align-items: center;
 }
 .nft-card__name {
-  font-size: calc(0.8rem + 0.290625vw);
-  line-height: 1.5625;
+  font-size: calc(0.836875rem + 0.390625vw);
+  line-height: 1.3125;
+  margin-bottom: 0;
 }
-@media (min-width: 24.375rem) {
+@media (min-width: 37.5rem) {
   .nft-card__name {
     font-size: 1rem;
   }
 }
 .nft-card__link {
   color: #313131;
-  font-size: calc(0.7rem + 0.290625vw);
+  font-size: 0.75rem;
 }
 .nft-card__price-current {
-  margin-top: 3px;
-  font-size: calc(0.7rem + 0.290625vw);
-  line-height: 1.5625;
+  font-size: 0.75rem;
 }
 .nft-card__price {
   font-weight: 500;
-  font-size: calc(0.8rem + 0.290625vw);
-  line-height: 1.25;
+  font-size: calc(0.836875rem + 0.390625vw);
+  line-height: 1.3125;
+  margin-bottom: 0;
 }
 @media (min-width: 24.375rem) {
   .nft-card__price {
