@@ -157,6 +157,7 @@ body {
   }
 }
 .nft-card__img {
+  position: relative;
   flex: 1;
 }
 .nft-card__img img {
@@ -255,6 +256,52 @@ body {
   background-color: #ff014f;
   border: 1px solid #ff014f;
   color: white;
+}
+.nft-card__block-absolute {
+  position: absolute;
+  width: 79.0560471976%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.5em;
+}
+
+.block-absolute {
+  background-color: rgba(255, 1, 77, 0.8);
+  color: white;
+  font-size: calc(0.75rem + 0.390625vw);
+  line-height: 1.0714285714;
+  margin-bottom: 0;
+  border-radius: 5px;
+  padding: 0.605em 0;
+}
+@media (min-width: 33.75rem) {
+  .block-absolute {
+    font-size: 0.875rem;
+  }
+}
+.block-absolute__row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.block-absolute__row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.block-absolute__row > div:last-of-type::after {
+  display: none;
+}
+.block-absolute__row > div p {
+  margin-bottom: 0.4em;
+}
+.block-absolute__row > div p:last-of-type {
+  margin-bottom: 0px;
+}
+.block-absolute__row .double-dots {
+  font-size: calc(1.2rem + 0.390625vw);
+  font-weight: bold;
 }
 
 .fa-heart {

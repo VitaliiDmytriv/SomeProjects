@@ -60,6 +60,7 @@ body {
         }
     }
 }
+
 .nft-card {
     padding: calc(15px + 0.390625vw);
     border: 0.5px solid #e3e3e3;
@@ -76,6 +77,7 @@ body {
         padding: 20px;
     }
     &__img {
+        position: relative;
         flex: 1;
         img {
             width: 100%;
@@ -121,8 +123,6 @@ body {
     }
 
     &__author-body {
-        // display: flex;
-        // justify-content: space-between;
         flex: 1;
 
         & > div {
@@ -177,6 +177,53 @@ body {
             background-color: $primaryColor;
             border: 1px solid $primaryColor;
             color: #ffff;
+        }
+    }
+    // absolute element watch ======================================
+    &__block-absolute {
+        position: absolute;
+        width: calc(268% / 339 * 100); // 299px
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.5em;
+    }
+}
+
+.block-absolute {
+    background-color: rgba(255, 1, 77, 0.8);
+    color: #ffff;
+    @include fontSize(14, 12rem, 15);
+    border-radius: 5px;
+    padding: 0.605em 0;
+    @media (min-width: 33.75rem) {
+        font-size: 0.875rem;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-evenly;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &:last-of-type::after {
+                display: none;
+            }
+
+            & p {
+                margin-bottom: 0.4em;
+            }
+            & p:last-of-type {
+                margin-bottom: 0px;
+            }
+        }
+
+        & .double-dots {
+            font-size: calc(1.2rem + $baseVW);
+            font-weight: bold;
         }
     }
 }
