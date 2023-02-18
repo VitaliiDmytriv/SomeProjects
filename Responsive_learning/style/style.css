@@ -94,6 +94,7 @@ body {
 .container {
   max-width: 74.375rem;
   margin: auto;
+  padding: 15px;
 }
 
 .subtitle {
@@ -143,7 +144,7 @@ body {
 }
 
 .nft {
-  padding: 10px;
+  margin-bottom: 6.875rem;
 }
 .nft__row {
   display: grid;
@@ -313,4 +314,66 @@ body {
 .fa-heart {
   color: #d7443e;
   font-size: 1.25rem;
+}
+
+.market__body {
+  padding: 0 3%;
+}
+.market__row {
+  display: grid;
+}
+@media (min-width: 53.93rem) {
+  .market__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.market__column:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+.market__layout {
+  margin-bottom: 19%;
+}
+@media (min-width: 35.125rem) {
+  .market__layout {
+    margin-bottom: 5.625rem;
+  }
+}
+@media (min-width: 53.93rem) {
+  .market__layout {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 58.75rem) {
+  .market__layout {
+    margin-right: 15%;
+  }
+}
+.market__img img {
+  max-width: 100%;
+}
+.market .img1 {
+  position: relative;
+  max-width: 29.375rem;
+  margin-left: 0.5rem;
+}
+.market .img2 {
+  position: absolute;
+  max-width: 22.75rem;
+  width: 60%;
+  bottom: -15.9%;
+  right: -5%;
+}
+@media (min-width: 58.75rem) {
+  .market .img2 {
+    right: -15%;
+  }
+}
+.market .img3 {
+  max-width: 13.5rem;
+  width: 45.95%;
+  left: -7%;
+  position: absolute;
+  top: 0;
 }/*# sourceMappingURL=style.css.map */
