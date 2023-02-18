@@ -21,30 +21,54 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
+// block elements ==========
+
+.container {
+    max-width: 74.375rem;
+    margin: auto;
+}
+
+.subtitle {
+    color: $primaryColor;
+    text-align: center;
+    @include fontSize(16, 11.39rem, 21, 20em);
+}
+
+.title {
+    color: $secondaryColor;
+    @include fontSize(40, 28.9rem, 60, 50em);
+    font-weight: 700;
+    text-align: center;
+
+    @media (min-width: 37.5rem) {
+        @include fontSize(40, 35.5rem, 60, 50em);
+    }
+}
+
+.btn {
+    background-color: transparent;
+    color: $secondaryColor;
+    border: 1px solid $secondaryColor;
+    text-align: center;
+    font-weight: 500;
+    font-size: calc(0.8rem + 0.290625vw);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    @media (min-width: 24.375rem) {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background-color: $primaryColor;
+        border: 1px solid $primaryColor;
+        color: #ffff;
+    }
+}
+
+// Container ==================
 .nft {
     padding: 10px;
-
-    &__container {
-        max-width: 74.375rem;
-        margin: auto;
-    }
-
-    &__subtitle {
-        color: $primaryColor;
-        text-align: center;
-        @include fontSize(16, 11.39rem, 21, 20em);
-    }
-
-    &__title {
-        color: $secondaryColor;
-        @include fontSize(40, 28.9rem, 60, 50em);
-        font-weight: 700;
-        text-align: center;
-
-        @media (min-width: 37.5rem) {
-            @include fontSize(40, 35.5rem, 60, 50em);
-        }
-    }
 
     &__row {
         display: grid;
@@ -157,28 +181,11 @@ body {
     }
 
     &__btn {
-        background-color: transparent;
-        color: $secondaryColor;
-        border: 1px solid $secondaryColor;
-        text-align: center;
         width: 80%;
         margin: auto;
-        font-weight: 500;
-        font-size: calc(0.8rem + 0.290625vw);
         padding: 0.625em 0;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.2s;
-        @media (min-width: 24.375rem) {
-            font-size: 1rem;
-        }
-
-        &:hover {
-            background-color: $primaryColor;
-            border: 1px solid $primaryColor;
-            color: #ffff;
-        }
     }
+
     // absolute element watch ======================================
     &__block-absolute {
         position: absolute;
