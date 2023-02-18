@@ -127,8 +127,6 @@ body {
   border: 1px solid #1e2d48;
   text-align: center;
   font-weight: 500;
-  font-size: calc(0.8rem + 0.290625vw);
-  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -263,6 +261,8 @@ body {
   width: 80%;
   margin: auto;
   padding: 0.625em 0;
+  font-size: calc(0.8rem + 0.290625vw);
+  border-radius: 20px;
 }
 .nft-card__block-absolute {
   position: absolute;
@@ -319,6 +319,11 @@ body {
 .market__body {
   padding: 0 3%;
 }
+@media (min-width: 53.93rem) {
+  .market__body {
+    padding: 0 0 0 3%;
+  }
+}
 .market__row {
   display: grid;
 }
@@ -330,6 +335,13 @@ body {
 .market__column:first-of-type {
   display: flex;
   justify-content: center;
+}
+.market__column:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.market__column:last-of-type > div:first-of-type {
+  flex: 1;
 }
 .market__layout {
   margin-bottom: 19%;
@@ -358,11 +370,37 @@ body {
   max-width: 29.375rem;
   margin-left: 0.5rem;
 }
+.market .img1::after {
+  content: "";
+  position: absolute;
+  width: 17.021%;
+  height: 15.35%;
+  background-color: #257bf8;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 20px 20px rgba(37, 123, 248, 0.5);
+}
+.market .img1::before {
+  content: "";
+  position: absolute;
+  width: 7.65%;
+  height: 7.67%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 3;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+          clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  margin-left: 1%;
+}
 .market .img2 {
   position: absolute;
   max-width: 22.75rem;
   width: 60%;
-  bottom: -15.9%;
+  bottom: -10.9%;
   right: -5%;
 }
 @media (min-width: 58.75rem) {
@@ -376,4 +414,67 @@ body {
   left: -7%;
   position: absolute;
   top: 0;
+}
+.market__text {
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.875;
+  margin-bottom: 1.25em;
+  color: #313131;
+  font-weight: 500;
+}
+@media (max-width: 34.5rem) {
+  .market__text {
+    font-size: 0.84375rem;
+  }
+}
+@media (min-width: 74.375rem) {
+  .market__text {
+    font-size: 1rem;
+  }
+}
+.market__list {
+  padding-left: 1.3em;
+  color: #000000;
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 2.5em;
+}
+@media (max-width: 34.5rem) {
+  .market__list {
+    font-size: 0.84375rem;
+  }
+}
+@media (min-width: 74.375rem) {
+  .market__list {
+    font-size: 1rem;
+  }
+}
+.market__list > li {
+  margin-bottom: 1.25em;
+  position: relative;
+}
+.market__list > li::before {
+  position: absolute;
+  content: "■";
+  color: #ff014f;
+  left: -1.5em;
+  font-size: 0.8rem;
+}
+@media (min-width: 53.93rem) {
+  .market__list > li::before {
+    font-size: 1rem;
+  }
+}
+.market__btn {
+  align-self: flex-start;
+  font-size: calc(0.8375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 0;
+  padding: 0.55em 1.6em;
+  border-radius: 30px;
+}
+@media (min-width: 74.375rem) {
+  .market__btn {
+    font-size: 1.125rem;
+  }
 }/*# sourceMappingURL=style.css.map */

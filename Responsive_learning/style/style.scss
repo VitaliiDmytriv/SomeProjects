@@ -4,6 +4,7 @@
 // Color ===================
 $primaryColor: #ff014f;
 $secondaryColor: #1e2d48;
+$thirdColor: #313131;
 
 // font-size ===============
 $baseFZ: 16;
@@ -52,8 +53,6 @@ body {
     border: 1px solid $secondaryColor;
     text-align: center;
     font-weight: 500;
-    font-size: calc(0.8rem + 0.290625vw);
-    border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s;
     @media (min-width: 24.375rem) {
@@ -185,6 +184,8 @@ body {
         width: 80%;
         margin: auto;
         padding: 0.625em 0;
+        font-size: calc(0.8rem + 0.290625vw);
+        border-radius: 20px;
     }
 
     // absolute element watch ======================================
@@ -245,6 +246,9 @@ body {
 .market {
     &__body {
         padding: 0 3%;
+        @media (min-width: 53.93rem) {
+            padding: 0 0 0 3%;
+        }
     }
 
     &__row {
@@ -258,6 +262,14 @@ body {
         &:first-of-type {
             display: flex;
             justify-content: center;
+        }
+
+        &:last-of-type {
+            display: flex;
+            flex-direction: column;
+            & > div:first-of-type {
+                flex: 1;
+            }
         }
     }
 
@@ -285,13 +297,39 @@ body {
         position: relative;
         max-width: 29.375rem;
         margin-left: 0.5rem;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 17.021%;
+            height: 15.35%;
+            background-color: #257bf8;
+            border-radius: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 20px 20px rgba(37, 123, 248, 0.5);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 7.65%;
+            height: 7.67%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffff;
+            z-index: 3;
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            margin-left: 1%;
+        }
     }
     .img2 {
         position: absolute;
         max-width: 22.75rem;
         width: 60%;
         // width: 77.44%;
-        bottom: -15.9%;
+        bottom: -10.9%;
         // right: -27%; // 129 / 470 *100
         right: -5%;
         @media (min-width: 58.75rem) {
@@ -306,12 +344,52 @@ body {
         top: 0;
     }
 
-    // &__text {
-    // }
+    &__text {
+        @include fontSize(16, 11.39rem, 30, 20em);
+        @media (max-width: 34.5rem) {
+            font-size: 0.84375rem;
+        }
+        color: $thirdColor;
+        font-weight: 500;
+        @media (min-width: 74.375rem) {
+            font-size: 1rem;
+        }
+    }
 
-    // &__list {
-    // }
+    &__list {
+        padding-left: 1.3em;
+        color: #000000;
+        @include fontSize(16, 11.39rem, 20, 40em);
+        @media (max-width: 34.5rem) {
+            font-size: 0.84375rem;
+        }
 
-    // &__btn {
-    // }
+        @media (min-width: 74.375rem) {
+            font-size: 1rem;
+        }
+        & > li {
+            margin-bottom: 1.25em;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "\25A0	";
+                color: $primaryColor;
+                left: -1.5em;
+                font-size: 0.8rem;
+                @media (min-width: 53.93rem) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        align-self: flex-start;
+        @include fontSize(18, 13.4rem, 30);
+        padding: 0.55em 1.6em;
+        border-radius: 30px;
+        @media (min-width: 74.375rem) {
+            font-size: 1.125rem;
+        }
+    }
 }
