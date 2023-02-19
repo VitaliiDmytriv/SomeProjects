@@ -66,7 +66,8 @@ body {
     }
 }
 
-// Container ==================
+// NFT Container ============================================
+
 .nft {
     margin-bottom: 6.875rem;
 
@@ -188,7 +189,6 @@ body {
         border-radius: 20px;
     }
 
-    // absolute element watch ======================================
     &__block-absolute {
         position: absolute;
         width: calc(268% / 339 * 100); // 299px
@@ -242,8 +242,10 @@ body {
     font-size: 1.25rem;
 }
 
-// Market container ==============================
+// Market container ===================================================
+
 .market {
+    margin-bottom: 6.875rem;
     &__body {
         padding: 0 3%;
         @media (min-width: 53.93rem) {
@@ -293,6 +295,18 @@ body {
         }
     }
 
+    &__play-btn {
+        position: absolute;
+        width: 17.021%;
+        height: 15.35%;
+        background-color: #257bf8;
+        border-radius: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
     .img1 {
         position: relative;
         max-width: 29.375rem;
@@ -300,14 +314,17 @@ body {
         &::after {
             content: "";
             position: absolute;
-            width: 17.021%;
-            height: 15.35%;
-            background-color: #257bf8;
-            border-radius: 100%;
+            width: 32.34%;
+            height: 29.17%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0px 0px 20px 20px rgba(37, 123, 248, 0.5);
+            background: radial-gradient(
+                50% 50% at 50% 50%,
+                #9ac3ff 0%,
+                rgba(154, 195, 255, 0.99) 38.76%,
+                rgba(154, 195, 255, 0) 100%
+            );
         }
 
         &::before {
