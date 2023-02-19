@@ -142,7 +142,12 @@ body {
 }
 
 .nft {
-  margin-bottom: 6.875rem;
+  margin-bottom: 9.240625vw;
+}
+@media (min-width: 74.375rem) {
+  .nft {
+    margin-bottom: 6.875rem;
+  }
 }
 .nft__row {
   display: grid;
@@ -317,7 +322,12 @@ body {
 }
 
 .market {
-  margin-bottom: 6.875rem;
+  margin-bottom: 9.240625vw;
+}
+@media (min-width: 74.375rem) {
+  .market {
+    margin-bottom: 6.875rem;
+  }
 }
 .market__body {
   padding: 0 3%;
@@ -489,4 +499,114 @@ body {
   .market__btn {
     font-size: 1.125rem;
   }
+}
+
+.seller__title {
+  margin-bottom: 0.5em;
+}
+.seller__text {
+  font-size: calc(0.8375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 2.7777777778em;
+  text-align: center;
+}
+@media (min-width: 74.375rem) {
+  .seller__text {
+    font-size: 1.125rem;
+  }
+}
+.seller__grid {
+  display: grid;
+  -moz-column-gap: 1.5625em;
+       column-gap: 1.5625em;
+  row-gap: 1.5625em;
+}
+@media (min-width: 45rem) {
+  .seller__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 63.125rem) {
+  .seller__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.seller-card {
+  padding: 0.625em;
+  box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.5);
+  border-radius: 0.625rem;
+}
+.seller-card__row {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  -moz-column-gap: 1.25em;
+       column-gap: 1.25em;
+}
+.seller-card__img {
+  background-color: rgba(255, 1, 77, 0.4);
+  border-radius: 10px;
+}
+.seller-card__img img {
+  max-width: 100%;
+}
+.seller-card__name {
+  font-size: calc(0.834375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__name {
+    font-size: 1.125rem;
+  }
+}
+.seller-card__link {
+  font-size: calc(0.709375rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 1.125em;
+  font-weight: 500;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__link {
+    font-size: 1rem;
+  }
+}
+.seller-card__items-sold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.seller-card__items-sold > p:first-of-type {
+  color: #636363;
+  font-size: calc(0.709375rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__items-sold > p:first-of-type {
+    font-size: 1rem;
+  }
+}
+.seller-card__items-sold > p:last-of-type {
+  color: #636363;
+  box-shadow: 0px 0px 4px rgba(221, 221, 221, 0.5);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  padding: 0.25em;
+}
+
+.pink-text {
+  color: #ff014f;
+  position: relative;
+  display: inline-block;
+}
+.pink-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ff014f;
+  bottom: -0.25em;
 }/*# sourceMappingURL=style.css.map */
