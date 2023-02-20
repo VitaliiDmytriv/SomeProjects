@@ -17,5 +17,5 @@ gulp.task("sass", function () {
 });
 
 gulp.task("run", function () {
-    gulp.watch("./src/style/**/*.scss", gulp.series("sass"));
+    gulp.watch("./Responsive_learning/style/**/*.scss", gulp.series("sass"));
 });
