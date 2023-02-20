@@ -13,8 +13,8 @@ $baseWidthScreen: 74.375rem;
 
 @mixin fontSize($fz, $fluidFZ, $lineHeight, $marginB: 0) {
     font-size: calc($fluidFZ / $baseFZ + $baseVW);
-    line-height: $lineHeight / $fz;
-    margin-bottom: $marginB / $fz;
+    line-height: calc($lineHeight / $fz);
+    margin-bottom: calc($marginB / $fz);
 }
 
 @mixin margin-bott {
