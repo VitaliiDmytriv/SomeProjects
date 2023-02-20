@@ -1,34 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import "fontSize.scss";
 @import "../../null.scss";
-
-// Color ===================
-$primaryColor: #ff014f;
-$secondaryColor: #1e2d48;
-$thirdColor: #313131;
-
-// font-size ===============
-$baseFZ: 16;
-$baseVW: 0.390625vw;
-$baseWidthScreen: 74.375rem;
-
-@mixin fontSize($fz, $fluidFZ, $lineHeight, $marginB: 0) {
-    font-size: calc($fluidFZ / $baseFZ + $baseVW);
-    line-height: $lineHeight / $fz;
-    margin-bottom: $marginB / $fz;
-}
-
-@mixin margin-bott {
-    margin-bottom: 8.85 + $baseVW;
-    @media (min-width: $baseWidthScreen) {
-        margin-bottom: 6.875rem;
-    }
-}
-
-// ==========================
-
-body {
-    font-family: "DM Sans", sans-serif;
-}
+@import "func_var.scss";
 
 // block elements ==========
 
@@ -51,6 +23,7 @@ body {
     text-align: center;
 
     @media (min-width: 37.5rem) {
+        // 600
         @include fontSize(40, 35.5rem, 60, 50em);
     }
 }
@@ -250,175 +223,6 @@ body {
     font-size: 1.25rem;
 }
 
-// Market container ===================================================
-
-.market {
-    @include margin-bott();
-    &__body {
-        padding: 0 3%;
-        @media (min-width: 53.93rem) {
-            padding: 0 0 0 3%;
-        }
-    }
-
-    &__row {
-        display: grid;
-        @media (min-width: 53.93rem) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    &__column {
-        &:first-of-type {
-            display: flex;
-            justify-content: center;
-        }
-
-        &:last-of-type {
-            display: flex;
-            flex-direction: column;
-            & > div:first-of-type {
-                flex: 1;
-            }
-        }
-    }
-
-    &__layout {
-        margin-bottom: 19%;
-        @media (min-width: 35.125rem) {
-            margin-bottom: 5.625rem;
-        }
-        @media (min-width: 53.93rem) {
-            margin-right: 2rem;
-            margin-bottom: 0;
-        }
-        @media (min-width: 58.75rem) {
-            margin-right: 15%; // 129 / 470 *100
-        }
-    }
-
-    &__img {
-        img {
-            max-width: 100%;
-        }
-    }
-
-    &__play-btn {
-        position: absolute;
-        width: 17.021%;
-        height: 15.35%;
-        background-color: #257bf8;
-        border-radius: 100%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-    }
-
-    .img1 {
-        position: relative;
-        max-width: 29.375rem;
-        margin-left: 0.5rem;
-        &::after {
-            content: "";
-            position: absolute;
-            width: 32.34%;
-            height: 29.17%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: radial-gradient(
-                50% 50% at 50% 50%,
-                #9ac3ff 0%,
-                rgba(154, 195, 255, 0.99) 38.76%,
-                rgba(154, 195, 255, 0) 100%
-            );
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            width: 7.65%;
-            height: 7.67%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ffff;
-            z-index: 3;
-            clip-path: polygon(0 0, 0% 100%, 100% 50%);
-            margin-left: 1%;
-        }
-    }
-    .img2 {
-        position: absolute;
-        max-width: 22.75rem;
-        width: 60%;
-        // width: 77.44%;
-        bottom: -10.9%;
-        // right: -27%; // 129 / 470 *100
-        right: -5%;
-        @media (min-width: 58.75rem) {
-            right: -15%; // 129 / 470 *100
-        }
-    }
-    .img3 {
-        max-width: 13.5rem;
-        width: 45.95%; // 216/470*100
-        left: -7%;
-        position: absolute;
-        top: 0;
-    }
-
-    &__text {
-        @include fontSize(16, 11.39rem, 30, 20em);
-        @media (max-width: 34.5rem) {
-            font-size: 0.84375rem;
-        }
-        color: $thirdColor;
-        font-weight: 500;
-        @media (min-width: $baseWidthScreen) {
-            font-size: 1rem;
-        }
-    }
-
-    &__list {
-        padding-left: 1.3em;
-        color: #000000;
-        @include fontSize(16, 11.39rem, 20, 40em);
-        @media (max-width: 34.5rem) {
-            font-size: 0.84375rem;
-        }
-
-        @media (min-width: $baseWidthScreen) {
-            font-size: 1rem;
-        }
-        & > li {
-            margin-bottom: 1.25em;
-            position: relative;
-            &::before {
-                position: absolute;
-                content: "\25A0	";
-                color: $primaryColor;
-                left: -1.5em;
-                font-size: 0.8rem;
-                @media (min-width: 53.93rem) {
-                    font-size: 1rem;
-                }
-            }
-        }
-    }
-
-    &__btn {
-        align-self: flex-start;
-        @include fontSize(18, 13.4rem, 30);
-        padding: 0.55em 1.6em;
-        border-radius: 30px;
-        @media (min-width: $baseWidthScreen) {
-            font-size: 1.125rem;
-        }
-    }
-}
-
 // Seller container ===========================================
 
 .seller {
@@ -437,6 +241,7 @@ body {
     // }
 
     &__grid {
+        @include margin-bott();
         display: grid;
         column-gap: 1.5625em;
         row-gap: 1.5625em;
@@ -525,5 +330,99 @@ body {
         height: 1px;
         background-color: $primaryColor;
         bottom: -0.25em;
+    }
+}
+
+// create container ===================================
+
+.create {
+    &__title {
+        color: $secondaryColor;
+        font-weight: 700;
+        @include fontSize(40, 28.9rem, 60, 50em);
+        @media (min-width: $baseWidthScreen) {
+            font-size: 2.5rem;
+        }
+        @media (min-width: 37.5rem) {
+            @include fontSize(40, 35.5rem, 60, 50em);
+        }
+        @media (min-width: $baseWidthScreen) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__row {
+        display: grid;
+        row-gap: 0.625rem;
+        @media (min-width: 63.125rem) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 0;
+            column-gap: 4.5625rem;
+        }
+    }
+    // 78 / 261
+
+    &__column {
+        &:last-of-type {
+            text-align: center;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0.625em;
+        column-gap: 0.625em;
+        @media (min-width: 31.25em) {
+            row-gap: 1.875em;
+            column-gap: 1.875em;
+        }
+    }
+
+    &__block {
+    }
+}
+.create-block {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+        align-self: flex-start;
+        // font-size: calc(13rem + $baseVW);
+        padding: 5.74%;
+        border-radius: 4px;
+        @media (min-width: $baseWidthScreen) {
+            padding: 0.9375rem;
+        }
+    }
+
+    &__img2 {
+        background-color: #ffaec7;
+    }
+    &__img3 {
+        background-color: #7b5959;
+    }
+    &__img4 {
+        background-color: #bdefff;
+    }
+    &__img5 {
+        background-color: #aeffc5;
+    }
+
+    &__title {
+        flex: 1;
+        @include fontSize(20, 15.35rem, 30, 10em);
+        font-weight: 700;
+        margin-top: 1em;
+        @media (min-width: $baseWidthScreen) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__text {
+        @include fontSize(14, 9.35rem, 24);
     }
 }
