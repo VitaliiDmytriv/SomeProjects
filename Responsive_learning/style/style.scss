@@ -336,6 +336,7 @@
 // create container ===================================
 
 .create {
+    @include margin-bott();
     &__title {
         color: $secondaryColor;
         font-weight: 700;
@@ -425,6 +426,152 @@
     &__text {
         @include fontSize(14, 9.35rem, 24);
     }
+}
+
+// Roadmap ===================================
+
+.roadmap {
+    margin-bottom: 1000px;
+    &__grid {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 0.5fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    &__card {
+        box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.5);
+        padding: 3em 1.5625em;
+    }
+
+    &__card1 {
+        grid-row: 1/2;
+        grid-column: 3/4;
+    }
+    &__card2 {
+        grid-row: 2/3;
+    }
+    &__card3 {
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+    &__card4 {
+        grid-row: 4/5;
+    }
+    &__card5 {
+        grid-row: 5/6;
+        grid-column: 3/4;
+    }
+    &__card6 {
+        grid-row: 6/7;
+    }
+
+    &__card-title {
+        margin: 0.5em 0;
+    }
+
+    &__card-text {
+        margin: 0.5em 0;
+    }
+
+    &__card-btn {
+        margin: 0.5em 0;
+    }
+
+    &__line-container {
+        grid-column: 2/3;
+        grid-row: 1/-1;
+    }
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__block-stroke {
+        position: relative;
+        height: 83%;
+        width: 0.4126rem;
+        border: 1px solid #49496f;
+        // background: rgba(73, 73, 111, 0.2);
+    }
+
+    &__circle {
+        position: absolute;
+        z-index: 20;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid #ff4a4a;
+        border-radius: 100%;
+        background-color: #f6f9fc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            max-width: 90%;
+        }
+    }
+
+    &__circle1 {
+        top: -16px;
+    }
+    &__circle2 {
+        top: 18.36%;
+    }
+    &__circle3 {
+        top: 38.38%;
+    }
+    &__circle4 {
+        top: 58.4%;
+    }
+    &__circle5 {
+        top: 78.42%;
+    }
+    &__circle6 {
+        bottom: -16px;
+    }
+
+    &__inline {
+        position: absolute;
+        width: 44.34%;
+        height: 0.4126rem;
+        border: 1px solid rgb(73, 73, 111);
+        z-index: 2;
+    }
+    //1161
+
+    &__inline1 {
+        right: 0;
+        top: 8.31%;
+    }
+    &__inline2 {
+        left: 0;
+        top: 24.93%;
+    }
+    &__inline3 {
+        right: 0;
+        top: 41.55%;
+    }
+    &__inline4 {
+        left: 0;
+        top: 58.18%;
+    }
+    &__inline5 {
+        right: 0;
+        top: 74.8%;
+    }
+    &__inline6 {
+        left: 0;
+        top: 91.42%;
+    }
+}
+
+.qwe {
 }
 
 // .box {
