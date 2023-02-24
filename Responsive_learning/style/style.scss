@@ -431,7 +431,11 @@
 // Roadmap ===================================
 
 .roadmap {
+    display: none;
     margin-bottom: 1000px;
+    @media (max-width: 71.875rem) {
+        display: none;
+    }
 
     &__title-flex {
         display: flex;
@@ -480,15 +484,58 @@
         display: grid;
         grid-template-columns: 1fr 0.5fr 1fr;
         grid-template-rows: repeat(6, 1fr);
-        @media (max-width: 48.625rem) {
-            display: none;
-        }
     }
 
     &__card {
         box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.7);
-        padding: 3em 1.5625em;
+        padding: 1.25em 1.5625em;
         transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+
+        &:hover .roadmap__card-title {
+            color: $primaryColor;
+        }
+
+        &:nth-child(odd) {
+            align-items: flex-start;
+        }
+        &:nth-child(even) {
+            align-items: flex-end;
+            & p {
+                text-align: end;
+            }
+        }
+    }
+
+    &__card-title {
+        @include fontSize(20, 15.4rem, 30, 10em);
+        font-weight: bold;
+        transition: color 0.2s;
+        cursor: pointer;
+        @media (min-width: $baseWidthScreen) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__card-text {
+        @include fontSize(15, 10.4rem, 25, 20em);
+        @media (min-width: $baseWidthScreen) {
+            font-size: 0.9375rem;
+        }
+    }
+
+    &__card-btn {
+        @include fontSize(15, 10.4rem, 26);
+        font-weight: 500;
+        text-transform: uppercase;
+        border: 1px solid #ff4a4a;
+        color: #ff4a4a;
+        padding: 0.46em 1.8em;
+        border-radius: 5rem;
+        @media (min-width: $baseWidthScreen) {
+            font-size: 0.9375rem;
+        }
     }
 
     &__card1 {
@@ -529,18 +576,6 @@
         &.active {
             transform: translateX(0%);
         }
-    }
-
-    &__card-title {
-        margin: 0.5em 0;
-    }
-
-    &__card-text {
-        margin: 0.5em 0;
-    }
-
-    &__card-btn {
-        margin: 0.5em 0;
     }
 
     &__line-container {
@@ -611,6 +646,23 @@
     }
     &__circle6 {
         bottom: -16px;
+    }
+
+    &__circle-date {
+        position: absolute;
+        width: 291.875%;
+        color: #0a164b;
+        @include fontSize(16, 11.4rem, 26);
+        @media (min-width: $baseWidthScreen) {
+            font-size: 1rem;
+        }
+    }
+
+    &__circle-dateL {
+        left: -6.06em;
+    }
+    &__circle-dateR {
+        right: -6.06em;
     }
 
     // ========
