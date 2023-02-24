@@ -1,0 +1,732 @@
+{"version":3,"sources":["fontSize.scss"],"names":[],"mappings":"AAAQ","file":"fontSize.css","sourcesContent":["@import url(\"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap\");\r\n"]}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+/*# sourceMappingURL=fontSize.css.map */
+
+{"version":3,"sources":["func_var.scss"],"names":[],"mappings":"AAyBA;EACI","file":"func_var.css","sourcesContent":["// Color ===================\r\n$primaryColor: #ff014f;\r\n$secondaryColor: #1e2d48;\r\n$thirdColor: #313131;\r\n\r\n// font-size ===============\r\n$baseFZ: 16;\r\n$baseVW: 0.390625vw;\r\n$baseWidthScreen: 74.375rem;\r\n\r\n@mixin fontSize($fz, $fluidFZ, $lineHeight, $marginB: 0) {\r\n    font-size: calc($fluidFZ / $baseFZ + $baseVW);\r\n    line-height: calc($lineHeight / $fz);\r\n    margin-bottom: calc($marginB / $fz);\r\n}\r\n\r\n@mixin margin-bott {\r\n    margin-bottom: 8.85 + $baseVW;\r\n    @media (min-width: $baseWidthScreen) {\r\n        margin-bottom: 6.875rem;\r\n    }\r\n}\r\n\r\n// ==========================\r\n\r\nbody {\r\n    font-family: \"DM Sans\", sans-serif;\r\n}\r\n"]}
+body {
+  font-family: "DM Sans", sans-serif;
+}
+/*# sourceMappingURL=func_var.css.map */
+
+{"version":3,"sources":["func_var.scss","market.scss"],"names":[],"mappings":";AAyBA;EACI;;;ACxBJ;EDeI;;AACA;EChBJ;IDiBQ;;;ACfJ;EACI;;AACA;EAFJ;IAGQ;;;AAIR;EACI;;AACA;EAFJ;IAGQ;;;AAKJ;EACI;EACA;;AAGJ;EACI;EACA;;AACA;EACI;;AAKZ;EACI;;AACA;EAFJ;IAGQ;;;AAEJ;EALJ;IAMQ;IACA;;;AAEJ;EATJ;IAUQ;;;AAKJ;EACI;;AAIR;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA;EACA;;AACA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAQJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAGR;EACI;EACA;EACA;EAEA;EAEA;;AACA;EARJ;IASQ;;;AAGR;EACI;EACA;EACA;EACA;EACA;;AAGJ;ED5GA;EACA;EACA;EC+GI,ODzHK;EC0HL;;AAJA;EAFJ;IAGQ;;;AAIJ;EAPJ;IAQQ;;;AAIR;EACI;EACA;ED1HJ;EACA;EACA;;AC0HI;EAJJ;IAKQ;;;AAGJ;EARJ;IASQ;;;AAEJ;EACI;EACA;;AACA;EACI;EACA;EACA,ODnJD;ECoJC;EACA;;AACA;EANJ;IAOQ;;;AAMhB;EACI;EDpJJ;EACA;EACA;ECoJI;EACA;;AACA;EALJ;IAMQ","file":"market.css","sourcesContent":["// Color ===================\r\n$primaryColor: #ff014f;\r\n$secondaryColor: #1e2d48;\r\n$thirdColor: #313131;\r\n\r\n// font-size ===============\r\n$baseFZ: 16;\r\n$baseVW: 0.390625vw;\r\n$baseWidthScreen: 74.375rem;\r\n\r\n@mixin fontSize($fz, $fluidFZ, $lineHeight, $marginB: 0) {\r\n    font-size: calc($fluidFZ / $baseFZ + $baseVW);\r\n    line-height: calc($lineHeight / $fz);\r\n    margin-bottom: calc($marginB / $fz);\r\n}\r\n\r\n@mixin margin-bott {\r\n    margin-bottom: 8.85 + $baseVW;\r\n    @media (min-width: $baseWidthScreen) {\r\n        margin-bottom: 6.875rem;\r\n    }\r\n}\r\n\r\n// ==========================\r\n\r\nbody {\r\n    font-family: \"DM Sans\", sans-serif;\r\n}\r\n","@import \"func_var.scss\";\r\n\r\n.market {\r\n    @include margin-bott();\r\n    &__body {\r\n        padding: 0 3%;\r\n        @media (min-width: 53.93rem) {\r\n            padding: 0 0 0 3%;\r\n        }\r\n    }\r\n\r\n    &__row {\r\n        display: grid;\r\n        @media (min-width: 53.93rem) {\r\n            grid-template-columns: repeat(2, 1fr);\r\n        }\r\n    }\r\n\r\n    &__column {\r\n        &:first-of-type {\r\n            display: flex;\r\n            justify-content: center;\r\n        }\r\n\r\n        &:last-of-type {\r\n            display: flex;\r\n            flex-direction: column;\r\n            & > div:first-of-type {\r\n                flex: 1;\r\n            }\r\n        }\r\n    }\r\n\r\n    &__layout {\r\n        margin-bottom: 19%;\r\n        @media (min-width: 35.125rem) {\r\n            margin-bottom: 5.625rem;\r\n        }\r\n        @media (min-width: 53.93rem) {\r\n            margin-right: 2rem;\r\n            margin-bottom: 0;\r\n        }\r\n        @media (min-width: 58.75rem) {\r\n            margin-right: 15%; // 129 / 470 *100\r\n        }\r\n    }\r\n\r\n    &__img {\r\n        img {\r\n            max-width: 100%;\r\n        }\r\n    }\r\n\r\n    &__play-btn {\r\n        position: absolute;\r\n        width: 17.021%;\r\n        height: 15.35%;\r\n        background-color: #257bf8;\r\n        border-radius: 100%;\r\n        top: 50%;\r\n        left: 50%;\r\n        transform: translate(-50%, -50%);\r\n        z-index: 2;\r\n    }\r\n\r\n    .img1 {\r\n        position: relative;\r\n        max-width: 29.375rem;\r\n        margin-left: 0.5rem;\r\n        &::after {\r\n            content: \"\";\r\n            position: absolute;\r\n            width: 32.34%;\r\n            height: 29.17%;\r\n            top: 50%;\r\n            left: 50%;\r\n            transform: translate(-50%, -50%);\r\n            background: radial-gradient(\r\n                50% 50% at 50% 50%,\r\n                #9ac3ff 0%,\r\n                rgba(154, 195, 255, 0.99) 38.76%,\r\n                rgba(154, 195, 255, 0) 100%\r\n            );\r\n        }\r\n\r\n        &::before {\r\n            content: \"\";\r\n            position: absolute;\r\n            width: 7.65%;\r\n            height: 7.67%;\r\n            top: 50%;\r\n            left: 50%;\r\n            transform: translate(-50%, -50%);\r\n            background-color: #ffff;\r\n            z-index: 3;\r\n            clip-path: polygon(0 0, 0% 100%, 100% 50%);\r\n            margin-left: 1%;\r\n        }\r\n    }\r\n    .img2 {\r\n        position: absolute;\r\n        max-width: 22.75rem;\r\n        width: 60%;\r\n        // width: 77.44%;\r\n        bottom: -10.9%;\r\n        // right: -27%; // 129 / 470 *100\r\n        right: -5%;\r\n        @media (min-width: 58.75rem) {\r\n            right: -15%; // 129 / 470 *100\r\n        }\r\n    }\r\n    .img3 {\r\n        max-width: 13.5rem;\r\n        width: 45.95%; // 216/470*100\r\n        left: -7%;\r\n        position: absolute;\r\n        top: 0;\r\n    }\r\n\r\n    &__text {\r\n        @include fontSize(16, 11.39rem, 30, 20em);\r\n        @media (max-width: 34.5rem) {\r\n            font-size: 0.84375rem;\r\n        }\r\n        color: $thirdColor;\r\n        font-weight: 500;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__list {\r\n        padding-left: 1.3em;\r\n        color: #000000;\r\n        @include fontSize(16, 11.39rem, 20, 40em);\r\n        @media (max-width: 34.5rem) {\r\n            font-size: 0.84375rem;\r\n        }\r\n\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1rem;\r\n        }\r\n        & > li {\r\n            margin-bottom: 1.25em;\r\n            position: relative;\r\n            &::before {\r\n                position: absolute;\r\n                content: \"\\25A0\t\";\r\n                color: $primaryColor;\r\n                left: -1.5em;\r\n                font-size: 0.8rem;\r\n                @media (min-width: 53.93rem) {\r\n                    font-size: 1rem;\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    &__btn {\r\n        align-self: flex-start;\r\n        @include fontSize(18, 13.4rem, 30);\r\n        padding: 0.55em 1.6em;\r\n        border-radius: 30px;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n}\r\n"]}
+@charset "UTF-8";
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.market {
+  margin-bottom: 9.240625vw;
+}
+@media (min-width: 74.375rem) {
+  .market {
+    margin-bottom: 6.875rem;
+  }
+}
+.market__body {
+  padding: 0 3%;
+}
+@media (min-width: 53.93rem) {
+  .market__body {
+    padding: 0 0 0 3%;
+  }
+}
+.market__row {
+  display: grid;
+}
+@media (min-width: 53.93rem) {
+  .market__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.market__column:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+.market__column:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+.market__column:last-of-type > div:first-of-type {
+  flex: 1;
+}
+.market__layout {
+  margin-bottom: 19%;
+}
+@media (min-width: 35.125rem) {
+  .market__layout {
+    margin-bottom: 5.625rem;
+  }
+}
+@media (min-width: 53.93rem) {
+  .market__layout {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 58.75rem) {
+  .market__layout {
+    margin-right: 15%;
+  }
+}
+.market__img img {
+  max-width: 100%;
+}
+.market__play-btn {
+  position: absolute;
+  width: 17.021%;
+  height: 15.35%;
+  background-color: #257bf8;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.market .img1 {
+  position: relative;
+  max-width: 29.375rem;
+  margin-left: 0.5rem;
+}
+.market .img1::after {
+  content: "";
+  position: absolute;
+  width: 32.34%;
+  height: 29.17%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(50% 50% at 50% 50%, #9ac3ff 0%, rgba(154, 195, 255, 0.99) 38.76%, rgba(154, 195, 255, 0) 100%);
+}
+.market .img1::before {
+  content: "";
+  position: absolute;
+  width: 7.65%;
+  height: 7.67%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 3;
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  margin-left: 1%;
+}
+.market .img2 {
+  position: absolute;
+  max-width: 22.75rem;
+  width: 60%;
+  bottom: -10.9%;
+  right: -5%;
+}
+@media (min-width: 58.75rem) {
+  .market .img2 {
+    right: -15%;
+  }
+}
+.market .img3 {
+  max-width: 13.5rem;
+  width: 45.95%;
+  left: -7%;
+  position: absolute;
+  top: 0;
+}
+.market__text {
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.875;
+  margin-bottom: 1.25em;
+  color: #313131;
+  font-weight: 500;
+}
+@media (max-width: 34.5rem) {
+  .market__text {
+    font-size: 0.84375rem;
+  }
+}
+@media (min-width: 74.375rem) {
+  .market__text {
+    font-size: 1rem;
+  }
+}
+.market__list {
+  padding-left: 1.3em;
+  color: #000000;
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 2.5em;
+}
+@media (max-width: 34.5rem) {
+  .market__list {
+    font-size: 0.84375rem;
+  }
+}
+@media (min-width: 74.375rem) {
+  .market__list {
+    font-size: 1rem;
+  }
+}
+.market__list > li {
+  margin-bottom: 1.25em;
+  position: relative;
+}
+.market__list > li::before {
+  position: absolute;
+  content: "■";
+  color: #ff014f;
+  left: -1.5em;
+  font-size: 0.8rem;
+}
+@media (min-width: 53.93rem) {
+  .market__list > li::before {
+    font-size: 1rem;
+  }
+}
+.market__btn {
+  align-self: flex-start;
+  font-size: calc(0.8375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 0;
+  padding: 0.55em 1.6em;
+  border-radius: 30px;
+}
+@media (min-width: 74.375rem) {
+  .market__btn {
+    font-size: 1.125rem;
+  }
+}
+/*# sourceMappingURL=market.css.map */
+
+{"version":3,"sources":["fontSize.scss","../../null.scss","func_var.scss","style.scss"],"names":[],"mappings":"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","file":"style.css","sourcesContent":["@import url(\"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap\");\r\n","/*Обнуление*/\r\n* {\r\n    padding: 0;\r\n    margin: 0;\r\n    border: 0;\r\n}\r\n*,\r\n*:before,\r\n*:after {\r\n    -moz-box-sizing: border-box;\r\n    -webkit-box-sizing: border-box;\r\n    box-sizing: border-box;\r\n}\r\n:focus,\r\n:active {\r\n    outline: none;\r\n}\r\na:focus,\r\na:active {\r\n    outline: none;\r\n}\r\nnav,\r\nfooter,\r\nheader,\r\naside {\r\n    display: block;\r\n}\r\nhtml,\r\nbody {\r\n    height: 100%;\r\n    width: 100%;\r\n    font-size: 100%;\r\n    line-height: 1;\r\n    // font-size: 14px;\r\n    -ms-text-size-adjust: 100%;\r\n    -moz-text-size-adjust: 100%;\r\n    -webkit-text-size-adjust: 100%;\r\n}\r\ninput,\r\nbutton,\r\ntextarea {\r\n    font-family: inherit;\r\n}\r\ninput::-ms-clear {\r\n    display: none;\r\n}\r\nbutton {\r\n    cursor: pointer;\r\n}\r\nbutton::-moz-focus-inner {\r\n    padding: 0;\r\n    border: 0;\r\n}\r\na,\r\na:visited {\r\n    text-decoration: none;\r\n}\r\na:hover {\r\n    text-decoration: none;\r\n}\r\nul li {\r\n    list-style: none;\r\n}\r\nimg {\r\n    vertical-align: top;\r\n}\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n    font-size: inherit;\r\n    font-weight: inherit;\r\n}\r\n/*--------------------*/\r\n","// Color ===================\r\n$primaryColor: #ff014f;\r\n$secondaryColor: #1e2d48;\r\n$thirdColor: #313131;\r\n\r\n// font-size ===============\r\n$baseFZ: 16;\r\n$baseVW: 0.390625vw;\r\n$baseWidthScreen: 74.375rem;\r\n\r\n@mixin fontSize($fz, $fluidFZ, $lineHeight, $marginB: 0) {\r\n    font-size: calc($fluidFZ / $baseFZ + $baseVW);\r\n    line-height: calc($lineHeight / $fz);\r\n    margin-bottom: calc($marginB / $fz);\r\n}\r\n\r\n@mixin margin-bott {\r\n    margin-bottom: 8.85 + $baseVW;\r\n    @media (min-width: $baseWidthScreen) {\r\n        margin-bottom: 6.875rem;\r\n    }\r\n}\r\n\r\n// ==========================\r\n\r\nbody {\r\n    font-family: \"DM Sans\", sans-serif;\r\n}\r\n","@import \"fontSize.scss\";\r\n@import \"../../null.scss\";\r\n@import \"func_var.scss\";\r\n\r\n// block elements ==========\r\n\r\n.container {\r\n    max-width: $baseWidthScreen;\r\n    margin: auto;\r\n    padding: 15px;\r\n}\r\n\r\n.subtitle {\r\n    color: $primaryColor;\r\n    text-align: center;\r\n    @include fontSize(16, 11.39rem, 21, 20em);\r\n}\r\n\r\n.title {\r\n    color: $secondaryColor;\r\n    @include fontSize(40, 28.9rem, 60, 50em);\r\n    font-weight: 700;\r\n    text-align: center;\r\n\r\n    @media (min-width: 37.5rem) {\r\n        // 600\r\n        @include fontSize(40, 35.5rem, 60, 50em);\r\n    }\r\n}\r\n\r\n.btn {\r\n    background-color: transparent;\r\n    color: $secondaryColor;\r\n    border: 1px solid $secondaryColor;\r\n    text-align: center;\r\n    font-weight: 500;\r\n    cursor: pointer;\r\n    transition: all 0.2s;\r\n    @media (min-width: 24.375rem) {\r\n        font-size: 1rem;\r\n    }\r\n\r\n    &:hover {\r\n        background-color: $primaryColor;\r\n        border: 1px solid $primaryColor;\r\n        color: #ffff;\r\n    }\r\n}\r\n\r\n// NFT Container ============================================\r\n\r\n.nft {\r\n    @include margin-bott();\r\n\r\n    &__row {\r\n        display: grid;\r\n        column-gap: 1.5rem;\r\n        row-gap: 1.5rem;\r\n        @media (min-width: 42rem) {\r\n            //671px\r\n            grid-template-columns: repeat(2, 1fr);\r\n        }\r\n        @media (min-width: 63.125rem) {\r\n            //1010px\r\n            grid-template-columns: repeat(3, 1fr);\r\n        }\r\n    }\r\n}\r\n\r\n.nft-card {\r\n    padding: calc(15px + 0.390625vw);\r\n    border: 0.5px solid #e3e3e3;\r\n    border-radius: 3px;\r\n    box-shadow: 0px 0px 20px rgba(221, 221, 221);\r\n    min-width: 19.68rem;\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n    @media (max-width: 21.87rem) {\r\n        min-width: auto;\r\n    }\r\n    @media (min-width: 37.5rem) {\r\n        padding: 20px;\r\n    }\r\n    &__img {\r\n        position: relative;\r\n        flex: 1;\r\n        img {\r\n            width: 100%;\r\n            object-fit: cover;\r\n            object-position: center;\r\n        }\r\n    }\r\n\r\n    &__available-div {\r\n        margin-top: 13px;\r\n        margin-bottom: 13px;\r\n        display: flex;\r\n        justify-content: space-between;\r\n        align-items: center;\r\n\r\n        & :first-child {\r\n            display: flex;\r\n            align-items: center;\r\n        }\r\n\r\n        & p {\r\n            color: $primaryColor;\r\n            font-size: calc(0.7rem + 0.290625vw);\r\n            // @include fontSize(16, 16rem, 25);\r\n            line-height: 1.6;\r\n            margin-left: 5px;\r\n        }\r\n    }\r\n\r\n    &__author-div {\r\n        display: flex;\r\n        color: $secondaryColor;\r\n        margin-bottom: 1.25em;\r\n    }\r\n\r\n    &__author-img {\r\n        width: 40px;\r\n        height: 40px;\r\n        margin-right: 10px;\r\n        img {\r\n            max-width: 100%;\r\n        }\r\n    }\r\n\r\n    &__author-body {\r\n        flex: 1;\r\n\r\n        & > div {\r\n            display: flex;\r\n            justify-content: space-between;\r\n            align-items: center;\r\n        }\r\n    }\r\n\r\n    &__name {\r\n        @include fontSize(16, 13.39rem, 21);\r\n        @media (min-width: 37.5rem) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__link {\r\n        color: #313131;\r\n        font-size: 0.75rem;\r\n    }\r\n\r\n    &__price-current {\r\n        font-size: 0.75rem;\r\n    }\r\n\r\n    &__price {\r\n        font-weight: 500;\r\n        @include fontSize(16, 13.39rem, 21);\r\n        @media (min-width: 24.375rem) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__btn {\r\n        width: 80%;\r\n        margin: auto;\r\n        padding: 0.625em 0;\r\n        font-size: calc(0.8rem + 0.290625vw);\r\n        border-radius: 20px;\r\n    }\r\n\r\n    &__block-absolute {\r\n        position: absolute;\r\n        width: calc(268% / 339 * 100); // 299px\r\n        left: 50%;\r\n        transform: translateX(-50%);\r\n        bottom: 1.5em;\r\n    }\r\n}\r\n\r\n.block-absolute {\r\n    background-color: rgba(255, 1, 77, 0.8);\r\n    color: #ffff;\r\n    @include fontSize(14, 12rem, 15);\r\n    border-radius: 5px;\r\n    padding: 0.605em 0;\r\n    @media (min-width: 33.75rem) {\r\n        font-size: 0.875rem;\r\n    }\r\n\r\n    &__row {\r\n        display: flex;\r\n        justify-content: space-evenly;\r\n        & > div {\r\n            display: flex;\r\n            flex-direction: column;\r\n            justify-content: center;\r\n            align-items: center;\r\n            position: relative;\r\n\r\n            &:last-of-type::after {\r\n                display: none;\r\n            }\r\n\r\n            & p {\r\n                margin-bottom: 0.4em;\r\n            }\r\n            & p:last-of-type {\r\n                margin-bottom: 0px;\r\n            }\r\n        }\r\n\r\n        & .double-dots {\r\n            font-size: calc(1.2rem + $baseVW);\r\n            font-weight: bold;\r\n        }\r\n    }\r\n}\r\n\r\n.fa-heart {\r\n    color: #d7443e;\r\n    font-size: 1.25rem;\r\n}\r\n\r\n// Seller container ===========================================\r\n\r\n.seller {\r\n    &__title {\r\n        margin-bottom: 0.5em;\r\n    }\r\n    &__text {\r\n        @include fontSize(18, 13.4rem, 30, 50em);\r\n        text-align: center;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n\r\n    // &__body {\r\n    // }\r\n\r\n    &__grid {\r\n        @include margin-bott();\r\n        display: grid;\r\n        column-gap: 1.5625em;\r\n        row-gap: 1.5625em;\r\n        @media (min-width: 45rem) {\r\n            grid-template-columns: repeat(2, 1fr);\r\n        }\r\n        @media (min-width: 63.125rem) {\r\n            grid-template-columns: repeat(3, 1fr);\r\n        }\r\n    }\r\n\r\n    // &__seller-card {\r\n    // }\r\n}\r\n\r\n.seller-card {\r\n    padding: 0.625em;\r\n    box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.5);\r\n    border-radius: 0.625rem;\r\n\r\n    &__row {\r\n        display: grid;\r\n        grid-template-columns: 32% 1fr;\r\n        column-gap: 1.25em;\r\n    }\r\n    // 370 122\r\n    // &__column {\r\n    // }\r\n\r\n    &__img {\r\n        background-color: rgba(255, 1, 77, 0.4);\r\n        border-radius: 10px;\r\n        img {\r\n            max-width: 100%;\r\n        }\r\n    }\r\n\r\n    &__name {\r\n        @include fontSize(18, 13.35rem, 30);\r\n        font-weight: 700;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1.125rem;\r\n        }\r\n    }\r\n\r\n    &__link {\r\n        @include fontSize(16, 11.35rem, 20, 18em);\r\n        font-weight: 500;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1rem;\r\n        }\r\n    }\r\n\r\n    &__items-sold {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-between;\r\n\r\n        & > p:first-of-type {\r\n            color: #636363;\r\n            @include fontSize(16, 11.35rem, 20);\r\n\r\n            @media (min-width: $baseWidthScreen) {\r\n                font-size: 1rem;\r\n            }\r\n        }\r\n        & > p:last-of-type {\r\n            color: #636363;\r\n            box-shadow: 0px 0px 4px rgba(221, 221, 221, 0.5);\r\n            border-radius: 3px;\r\n            font-size: 0.75rem;\r\n            padding: 0.25em;\r\n        }\r\n    }\r\n}\r\n\r\n.pink-text {\r\n    color: $primaryColor;\r\n    position: relative;\r\n    display: inline-block;\r\n    &::after {\r\n        content: \"\";\r\n        position: absolute;\r\n        left: 0;\r\n        right: 0;\r\n        height: 1px;\r\n        background-color: $primaryColor;\r\n        bottom: -0.25em;\r\n    }\r\n}\r\n\r\n// create container ===================================\r\n\r\n.create {\r\n    &__title {\r\n        color: $secondaryColor;\r\n        font-weight: 700;\r\n        @include fontSize(40, 28.9rem, 60, 50em);\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 2.5rem;\r\n        }\r\n        @media (min-width: 37.5rem) {\r\n            @include fontSize(40, 35.5rem, 60, 50em);\r\n        }\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 2.5rem;\r\n        }\r\n    }\r\n\r\n    &__row {\r\n        display: grid;\r\n        row-gap: 0.625rem;\r\n        @media (min-width: 63.125rem) {\r\n            grid-template-columns: repeat(2, 1fr);\r\n            row-gap: 0;\r\n            column-gap: 4.5625rem;\r\n        }\r\n    }\r\n    // 78 / 261\r\n\r\n    &__column {\r\n        &:last-of-type {\r\n            text-align: center;\r\n            img {\r\n                max-width: 100%;\r\n            }\r\n        }\r\n    }\r\n\r\n    &__grid {\r\n        display: grid;\r\n        grid-template-columns: repeat(2, 1fr);\r\n        row-gap: 0.625em;\r\n        column-gap: 0.625em;\r\n        @media (min-width: 31.25em) {\r\n            row-gap: 1.875em;\r\n            column-gap: 1.875em;\r\n        }\r\n    }\r\n\r\n    // &__block {\r\n    // }\r\n}\r\n.create-block {\r\n    display: flex;\r\n    flex-direction: column;\r\n\r\n    &__img {\r\n        align-self: flex-start;\r\n        // font-size: calc(13rem + $baseVW);\r\n        padding: 5.74%;\r\n        border-radius: 4px;\r\n        @media (min-width: $baseWidthScreen) {\r\n            padding: 0.9375rem;\r\n        }\r\n    }\r\n\r\n    &__img2 {\r\n        background-color: #ffaec7;\r\n    }\r\n    &__img3 {\r\n        background-color: #7b5959;\r\n    }\r\n    &__img4 {\r\n        background-color: #bdefff;\r\n    }\r\n    &__img5 {\r\n        background-color: #aeffc5;\r\n    }\r\n\r\n    &__title {\r\n        flex: 1;\r\n        @include fontSize(20, 15.35rem, 30, 10em);\r\n        font-weight: 700;\r\n        margin-top: 1em;\r\n        @media (min-width: $baseWidthScreen) {\r\n            font-size: 1.25rem;\r\n        }\r\n    }\r\n\r\n    &__text {\r\n        @include fontSize(14, 9.35rem, 24);\r\n    }\r\n}\r\n\r\n// .box {\r\n//     width: 200px;\r\n//     height: 100px;\r\n//     background-color: rgb(73, 73, 111, 0.2);\r\n//     overflow-y: auto;\r\n//     border: 5px solid #49496f;\r\n//     transform: translateX(-200%);\r\n//     transition: transform 0.4s;\r\n//     margin-top: 3rem;\r\n\r\n//     &.left {\r\n//         transform: translateX(1000%);\r\n//     }\r\n\r\n//     &.active {\r\n//         transform: translateX(0);\r\n//     }\r\n// }\r\n\r\n// .mb {\r\n//     margin-bottom: 1000px;\r\n// }\r\n\r\n// .section {\r\n//     overflow: hidden;\r\n//     align-content: center;\r\n//     display: grid;\r\n//     grid-template-columns: 1fr 0.5fr 1fr;\r\n//     row-gap: 1rem;\r\n//     place-items: center;\r\n// }\r\n\r\n// .line {\r\n//     height: 20rem;\r\n//     width: 0.9rem;\r\n//     border: 1px solid black;\r\n//     position: relative;\r\n//     // overflow: hidden;\r\n//     grid-row: 2 / -3;\r\n//     grid-column: 2/3;\r\n//     &__heigth {\r\n//         content: \"\";\r\n//         position: absolute;\r\n//         top: 0;\r\n//         left: 0;\r\n//         right: 0;\r\n//         background-color: #49496f;\r\n//     }\r\n// }\r\n\r\n// .circle {\r\n//     width: 2rem;\r\n//     height: 2rem;\r\n//     background-color: #f6f9fc;\r\n//     border-radius: 100%;\r\n//     border: 1px solid #ff4a4a;\r\n// }\r\n"]}
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"); /*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  max-width: 74.375rem;
+  margin: auto;
+  padding: 15px;
+}
+
+.subtitle {
+  color: #ff014f;
+  text-align: center;
+  font-size: calc(0.711875rem + 0.390625vw);
+  line-height: 1.3125;
+  margin-bottom: 1.25em;
+}
+
+.title {
+  color: #1e2d48;
+  font-size: calc(1.80625rem + 0.390625vw);
+  line-height: 1.5;
+  margin-bottom: 1.25em;
+  font-weight: 700;
+  text-align: center;
+}
+@media (min-width: 37.5rem) {
+  .title {
+    font-size: calc(2.21875rem + 0.390625vw);
+    line-height: 1.5;
+    margin-bottom: 1.25em;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  color: #1e2d48;
+  border: 1px solid #1e2d48;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media (min-width: 24.375rem) {
+  .btn {
+    font-size: 1rem;
+  }
+}
+.btn:hover {
+  background-color: #ff014f;
+  border: 1px solid #ff014f;
+  color: white;
+}
+
+.nft {
+  margin-bottom: 9.240625vw;
+}
+@media (min-width: 74.375rem) {
+  .nft {
+    margin-bottom: 6.875rem;
+  }
+}
+.nft__row {
+  display: grid;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+@media (min-width: 42rem) {
+  .nft__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 63.125rem) {
+  .nft__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.nft-card {
+  padding: calc(15px + 0.390625vw);
+  border: 0.5px solid #e3e3e3;
+  border-radius: 3px;
+  box-shadow: 0px 0px 20px rgb(221, 221, 221);
+  min-width: 19.68rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 21.87rem) {
+  .nft-card {
+    min-width: auto;
+  }
+}
+@media (min-width: 37.5rem) {
+  .nft-card {
+    padding: 20px;
+  }
+}
+.nft-card__img {
+  position: relative;
+  flex: 1;
+}
+.nft-card__img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.nft-card__available-div {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-card__available-div :first-child {
+  display: flex;
+  align-items: center;
+}
+.nft-card__available-div p {
+  color: #ff014f;
+  font-size: calc(0.7rem + 0.290625vw);
+  line-height: 1.6;
+  margin-left: 5px;
+}
+.nft-card__author-div {
+  display: flex;
+  color: #1e2d48;
+  margin-bottom: 1.25em;
+}
+.nft-card__author-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.nft-card__author-img img {
+  max-width: 100%;
+}
+.nft-card__author-body {
+  flex: 1;
+}
+.nft-card__author-body > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-card__name {
+  font-size: calc(0.836875rem + 0.390625vw);
+  line-height: 1.3125;
+  margin-bottom: 0;
+}
+@media (min-width: 37.5rem) {
+  .nft-card__name {
+    font-size: 1rem;
+  }
+}
+.nft-card__link {
+  color: #313131;
+  font-size: 0.75rem;
+}
+.nft-card__price-current {
+  font-size: 0.75rem;
+}
+.nft-card__price {
+  font-weight: 500;
+  font-size: calc(0.836875rem + 0.390625vw);
+  line-height: 1.3125;
+  margin-bottom: 0;
+}
+@media (min-width: 24.375rem) {
+  .nft-card__price {
+    font-size: 1rem;
+  }
+}
+.nft-card__btn {
+  width: 80%;
+  margin: auto;
+  padding: 0.625em 0;
+  font-size: calc(0.8rem + 0.290625vw);
+  border-radius: 20px;
+}
+.nft-card__block-absolute {
+  position: absolute;
+  width: 79.0560471976%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.5em;
+}
+
+.block-absolute {
+  background-color: rgba(255, 1, 77, 0.8);
+  color: white;
+  font-size: calc(0.75rem + 0.390625vw);
+  line-height: 1.0714285714;
+  margin-bottom: 0;
+  border-radius: 5px;
+  padding: 0.605em 0;
+}
+@media (min-width: 33.75rem) {
+  .block-absolute {
+    font-size: 0.875rem;
+  }
+}
+.block-absolute__row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.block-absolute__row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.block-absolute__row > div:last-of-type::after {
+  display: none;
+}
+.block-absolute__row > div p {
+  margin-bottom: 0.4em;
+}
+.block-absolute__row > div p:last-of-type {
+  margin-bottom: 0px;
+}
+.block-absolute__row .double-dots {
+  font-size: calc(1.2rem + 0.390625vw);
+  font-weight: bold;
+}
+
+.fa-heart {
+  color: #d7443e;
+  font-size: 1.25rem;
+}
+
+.seller__title {
+  margin-bottom: 0.5em;
+}
+.seller__text {
+  font-size: calc(0.8375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 2.7777777778em;
+  text-align: center;
+}
+@media (min-width: 74.375rem) {
+  .seller__text {
+    font-size: 1.125rem;
+  }
+}
+.seller__grid {
+  margin-bottom: 9.240625vw;
+  display: grid;
+  column-gap: 1.5625em;
+  row-gap: 1.5625em;
+}
+@media (min-width: 74.375rem) {
+  .seller__grid {
+    margin-bottom: 6.875rem;
+  }
+}
+@media (min-width: 45rem) {
+  .seller__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 63.125rem) {
+  .seller__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.seller-card {
+  padding: 0.625em;
+  box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.5);
+  border-radius: 0.625rem;
+}
+.seller-card__row {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  column-gap: 1.25em;
+}
+.seller-card__img {
+  background-color: rgba(255, 1, 77, 0.4);
+  border-radius: 10px;
+}
+.seller-card__img img {
+  max-width: 100%;
+}
+.seller-card__name {
+  font-size: calc(0.834375rem + 0.390625vw);
+  line-height: 1.6666666667;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__name {
+    font-size: 1.125rem;
+  }
+}
+.seller-card__link {
+  font-size: calc(0.709375rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 1.125em;
+  font-weight: 500;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__link {
+    font-size: 1rem;
+  }
+}
+.seller-card__items-sold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.seller-card__items-sold > p:first-of-type {
+  color: #636363;
+  font-size: calc(0.709375rem + 0.390625vw);
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+@media (min-width: 74.375rem) {
+  .seller-card__items-sold > p:first-of-type {
+    font-size: 1rem;
+  }
+}
+.seller-card__items-sold > p:last-of-type {
+  color: #636363;
+  box-shadow: 0px 0px 4px rgba(221, 221, 221, 0.5);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  padding: 0.25em;
+}
+
+.pink-text {
+  color: #ff014f;
+  position: relative;
+  display: inline-block;
+}
+.pink-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ff014f;
+  bottom: -0.25em;
+}
+
+.create__title {
+  color: #1e2d48;
+  font-weight: 700;
+  font-size: calc(1.80625rem + 0.390625vw);
+  line-height: 1.5;
+  margin-bottom: 1.25em;
+}
+@media (min-width: 74.375rem) {
+  .create__title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 37.5rem) {
+  .create__title {
+    font-size: calc(2.21875rem + 0.390625vw);
+    line-height: 1.5;
+    margin-bottom: 1.25em;
+  }
+}
+@media (min-width: 74.375rem) {
+  .create__title {
+    font-size: 2.5rem;
+  }
+}
+.create__row {
+  display: grid;
+  row-gap: 0.625rem;
+}
+@media (min-width: 63.125rem) {
+  .create__row {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0;
+    column-gap: 4.5625rem;
+  }
+}
+.create__column:last-of-type {
+  text-align: center;
+}
+.create__column:last-of-type img {
+  max-width: 100%;
+}
+.create__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.625em;
+  column-gap: 0.625em;
+}
+@media (min-width: 31.25em) {
+  .create__grid {
+    row-gap: 1.875em;
+    column-gap: 1.875em;
+  }
+}
+
+.create-block {
+  display: flex;
+  flex-direction: column;
+}
+.create-block__img {
+  align-self: flex-start;
+  padding: 5.74%;
+  border-radius: 4px;
+}
+@media (min-width: 74.375rem) {
+  .create-block__img {
+    padding: 0.9375rem;
+  }
+}
+.create-block__img2 {
+  background-color: #ffaec7;
+}
+.create-block__img3 {
+  background-color: #7b5959;
+}
+.create-block__img4 {
+  background-color: #bdefff;
+}
+.create-block__img5 {
+  background-color: #aeffc5;
+}
+.create-block__title {
+  flex: 1;
+  font-size: calc(0.959375rem + 0.390625vw);
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  margin-top: 1em;
+}
+@media (min-width: 74.375rem) {
+  .create-block__title {
+    font-size: 1.25rem;
+  }
+}
+.create-block__text {
+  font-size: calc(0.584375rem + 0.390625vw);
+  line-height: 1.7142857143;
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */
