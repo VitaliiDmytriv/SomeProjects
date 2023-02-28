@@ -7,7 +7,7 @@
 .container {
     max-width: $baseWidthScreen;
     margin: auto;
-    padding: 15px;
+    padding: 0.9375rem;
 }
 
 .subtitle {
@@ -649,5 +649,216 @@
     .fa-chevron-left,
     .hover .fa-chevron-right {
         transition: color 0.3s;
+    }
+}
+
+// Foooter ========================================
+
+.footer {
+    .container {
+        @media (min-width: 37.5rem) {
+            padding: 1.5625rem 0.8125rem;
+        }
+    }
+
+    background: linear-gradient(
+        180deg,
+        #1e1e46 0%,
+        #261564 23.92%,
+        #2f158c 84.05%,
+        #1c0088 100%
+    );
+    color: #dedede;
+
+    &__grid {
+        display: grid;
+        row-gap: 1rem;
+        grid-template-areas:
+            "about"
+            "market"
+            "explore"
+            "media"
+            "footer";
+        @include fontSize(16, 12.4rem, 20);
+
+        @media (min-width: 57.625rem) {
+            font-size: 1rem;
+        }
+
+        @media (min-width: 62.5rem) {
+            grid-template-columns: 1fr max-content max-content 0.7fr;
+            grid-template-areas:
+                "about  explore market media"
+                "about  explore market media"
+                "footer footer  footer footer";
+            column-gap: 3rem;
+        }
+    }
+
+    &__grid-item2 {
+        grid-area: explore;
+    }
+
+    &__drop {
+        position: relative;
+    }
+
+    &__title {
+        color: #ffff;
+        font-weight: 500;
+        @include fontSize(20, 15.4rem, 26);
+
+        @media (min-width: $baseWidthScreen) {
+            font-size: 1.25rem;
+            margin-bottom: 1.875em;
+        }
+    }
+
+    &__grid-item3 {
+        grid-area: market;
+    }
+
+    &__grid-item4 {
+        grid-area: media;
+    }
+
+    &__media-links {
+        margin-top: 0.9375em;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: 62.5rem) {
+            width: 50.64%;
+        }
+    }
+
+    &__media-link {
+        display: inline-flex;
+        border-radius: 100%;
+        justify-content: center;
+        align-items: center;
+        width: 2.1875rem;
+        height: 2.1875rem;
+        background-color: #ffff;
+        margin-right: 0.9375em;
+        margin-bottom: 0.9375em;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        .fa-brands {
+            color: $primaryColor;
+        }
+    }
+
+    &__subscribe {
+        display: flex;
+        border: 1px solid #dedede;
+
+        input {
+            font-size: 0.875rem;
+            flex: 1;
+            background-color: transparent;
+
+            padding: 0.785em;
+            color: #ffff;
+        }
+
+        button {
+            background-color: $primaryColor;
+            color: #ffff;
+            font-size: 1rem;
+            padding: 1px 0.625em;
+            margin-left: -1px;
+            border-radius: 0;
+        }
+    }
+
+    &__grid-item1 {
+        grid-area: about;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.25em;
+        h4 {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 62.5rem) {
+            margin-bottom: 2.3475em;
+        }
+    }
+
+    &__header-img {
+        margin-right: 0.6rem;
+    }
+
+    &__text {
+        line-height: 1.45;
+        margin-bottom: 1.25em;
+        @media (min-width: 62.5rem) {
+            width: 69.59%;
+            margin-bottom: 1.875em;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.9375em;
+
+        div {
+            margin-left: 1.25em;
+        }
+
+        @media (min-width: 62.5rem) {
+            margin-bottom: 1.875em;
+        }
+    }
+
+    &__grid-item5 {
+        margin-top: 1em;
+        grid-area: footer;
+        text-align: center;
+        @include fontSize(18, 13.4rem, 23.44);
+
+        @media (min-width: $baseWidthScreen) {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+.dropdown-triger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    @media (min-width: 62.5rem) {
+        .fa-solid {
+            display: none;
+        }
+        margin-bottom: 0;
+    }
+}
+.dropdown-menu {
+    display: none;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 1.375rem;
+    // visibility: hidden;
+    color: #dedede;
+    a {
+        color: inherit;
+    }
+
+    @media (min-width: 62.5rem) {
+        display: block;
+        li {
+            margin-bottom: 1.25em;
+        }
     }
 }
