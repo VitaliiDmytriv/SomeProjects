@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    // Swiper ========================================
+
     new Swiper(".feedback-slider", {
         loop: true,
         speed: 900,
@@ -40,9 +42,35 @@ $(document).ready(function () {
         },
     });
 
-    // $(".dropdown-triger").click(function (e) {
-    //     e.preventDefault();
-    //     // $(".dropdown-menu").slideDown();
-    //     console.log(e);
-    // });
+    // Поява drop menu в футері ===========================
+
+    handleDropdownTriger();
+
+    function handleDropdownTriger() {
+        let screenSize = $(window).width();
+        let fontBase = parseInt($("html").css("font-size"));
+
+        if (screenSize / fontBase < 62.5) {
+            // vieport width  / fz root element < (1000px = 62.5rem)
+            $(".dropdown-triger")
+                .off("click")
+                .on("click", function (e) {
+                    e.preventDefault();
+                    if ($(this).next().css("display") !== "block") {
+                        $(this).next().slideDown();
+                        $($(this)).addClass("active");
+                    } else {
+                        $(this).next().slideUp();
+                        $($(this)).removeClass("active");
+                    }
+                });
+        } else {
+            $(".dropdown-triger").off("click");
+            $(".dropdown-menu").css("display", "block");
+        }
+    }
+
+    $(window).resize(function () {
+        handleDropdownTriger();
+    });
 });
