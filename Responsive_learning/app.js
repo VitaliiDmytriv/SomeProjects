@@ -42,6 +42,12 @@ $(document).ready(function () {
         },
     });
 
+    // Variables ==========================================
+
+    const header = $("header");
+    const $hamburger = $(".hamburger");
+    const $headerNav = $(".header__nav");
+
     // Поява drop menu в футері ===========================
 
     handleDropdownTriger();
@@ -72,5 +78,48 @@ $(document).ready(function () {
 
     $(window).resize(function () {
         handleDropdownTriger();
+    });
+
+    // header menu toggle ===================================
+
+    $hamburger.on("click", function () {
+        $(this).toggleClass("active");
+        if ($(this).hasClass("active")) {
+            handleMenuHeight();
+        } else {
+            $headerNav.css("top", "-500%");
+        }
+    });
+
+    function handleMenuHeight() {
+        let height = header.innerHeight();
+        $headerNav.css("top", height);
+    }
+
+    $(window).on("resize", function () {
+        let screenWidth = $(this).width();
+        let fontSize = parseInt($("html").css("font-size"));
+        if (screenWidth / fontSize < 57.5 && $hamburger.hasClass("active")) {
+            handleMenuHeight();
+        }
+    });
+
+    // Show/hide menu on scroll ================================
+
+    let prevScrollpos = window.pageYOffset;
+
+    $(window).on("scroll", function () {
+        let currentScrollPos = window.pageYOffset;
+        let height = header.innerHeight();
+        let positionNavig = parseInt($headerNav.css("top"));
+
+        if (positionNavig < 0) {
+            if (prevScrollpos > currentScrollPos) {
+                header.css("top", "0");
+            } else {
+                header.css("top", -height);
+            }
+        }
+        prevScrollpos = currentScrollPos;
     });
 });
