@@ -274,6 +274,254 @@ header {
     }
 }
 
+// main section =============================================
+
+.main {
+    background: linear-gradient(
+        253.86deg,
+        rgba(25, 32, 99, 0.94) 3.29%,
+        rgba(120, 44, 156, 0.94) 101.98%
+    );
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 1.125rem;
+        min-height: 100vh;
+        padding-bottom: 2rem;
+        position: relative;
+        z-index: 3;
+
+        &::after {
+            position: absolute;
+            z-index: 1;
+            content: "";
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url("./img/main/picMain.svg");
+            background-repeat: no-repeat;
+            background-position: center 20%;
+            background-size: 90% 80%;
+            background-blend-mode: overlay;
+            filter: opacity(30%);
+        }
+    }
+
+    &__flex {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        padding-top: 5.0625rem;
+        flex-direction: column;
+        align-items: center;
+        // padding-top: calc(13.77% + 2rem);
+        // margin-bottom: 5.521%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    h1 {
+        @include fontSize(40, 35.4rem, 50, 15em);
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        z-index: 3;
+
+        @media (min-width: 58.75rem) {
+            @include fontSize(70, 65.4rem, 80, 30em);
+        }
+
+        @media (min-width: $baseWidthScreen) {
+            font-size: 4.375rem;
+        }
+
+        & > span {
+            position: relative;
+        }
+    }
+
+    &__artObj {
+        position: absolute;
+        background-image: url("./img/main/pic6.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: -2%;
+        bottom: -2%;
+        left: -1%;
+        right: -1%;
+        z-index: 10;
+    }
+
+    &__text {
+        color: #dedede;
+        text-align: center;
+        padding: 0 1.5rem;
+        margin-bottom: 2.77em;
+
+        @media (min-width: 56.25rem) {
+            width: 59.6%;
+            padding: 0;
+        }
+    }
+
+    &__action {
+        @include fontSize(18, 13.4rem, 23);
+        position: relative;
+        @media (min-width: 33.3125rem) {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 23.58%;
+                height: 166%;
+                bottom: 0;
+                left: -23.58%;
+                bottom: -80%;
+                background-image: url("./img/main/pic7.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+    }
+
+    &__btn {
+        display: inline-block;
+        color: #ccefff;
+        border-color: #7c898e;
+        padding: 0.522em 0.811em;
+        border-radius: 2rem;
+        font-weight: 500;
+
+        @media (min-width: 22.375rem) {
+            margin-right: 1.66em;
+            padding: 0.722em 1.111em;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__slider {
+        background: linear-gradient(268.56deg, #322372 -1.81%, #592889 101.82%);
+        position: relative;
+        z-index: 3;
+
+        @media (min-width: 33.3125rem) {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 23.58%;
+                height: 166%;
+                bottom: 0;
+                top: -120%;
+                right: 0;
+
+                background-image: url("./img/main/pic8.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    &__overflow {
+        overflow: hidden;
+    }
+
+    &__wrapper {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        white-space: nowrap;
+
+        animation: 3s scroll 0s ease-in-out;
+    }
+
+    &__slide {
+        // &:nth-of-type(odd) {
+        //     animation: bounceUp 3s linear 3s;
+        // }
+        // &:nth-of-type(even) {
+        //     animation: bounceDown 3s linear 3s;
+        // }
+
+        @include fontSize(16, 13.39rem, 21);
+
+        margin-right: 0.5em;
+        @media (min-width: 28.75rem) {
+            margin-right: 1em;
+        }
+        @media (min-width: 48.125rem) {
+            margin-right: 2em;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(-40%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceUp {
+    0% {
+        transform: translateY(0%);
+    }
+    25% {
+        transform: translateY(-12%);
+    }
+    50% {
+        transform: translateY(8%);
+    }
+    75% {
+        transform: translateY(-6%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes bounceDown {
+    0% {
+        transform: translateY(0%);
+    }
+    25% {
+        transform: translateY(12%);
+    }
+    50% {
+        transform: translateY(-8%);
+    }
+    75% {
+        transform: translateY(6%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 // NFT Container ============================================
 
 .nft {

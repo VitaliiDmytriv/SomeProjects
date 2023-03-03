@@ -42,6 +42,8 @@ $(document).ready(function () {
         },
     });
 
+    // new Swiper(".main__slider");
+
     // Variables ==========================================
 
     const header = $("header");
@@ -114,7 +116,7 @@ $(document).ready(function () {
         let positionNavig = parseInt($headerNav.css("top"));
 
         if (positionNavig < 0) {
-            if (prevScrollpos > currentScrollPos) {
+            if (prevScrollpos > currentScrollPos || currentScrollPos <= 10) {
                 header.css("top", "0");
             } else {
                 header.css("top", -height);
