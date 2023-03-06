@@ -277,6 +277,8 @@ header {
 // main section =============================================
 
 .main {
+    @include margin-bott();
+
     background: linear-gradient(
         253.86deg,
         rgba(25, 32, 99, 0.94) 3.29%,
@@ -417,9 +419,9 @@ header {
                 content: "";
                 position: absolute;
                 width: 23.58%;
-                height: 166%;
+                height: 146%;
                 bottom: 0;
-                top: -120%;
+                top: -110%;
                 right: 0;
 
                 background-image: url("./img/main/pic8.svg");
